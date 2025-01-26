@@ -1,10 +1,11 @@
-from mnist import MNIST
+import keras.datasets.mnist as mnist
+import numpy as np
+import matplotlib.pyplot as plt
 
-mndata = MNIST(r'C:\Users\Will Haley\Documents\GitHub\mnist_playground\mnist_dataset')
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
 
-# path = r'C:\Users\Will Haley\Documents\GitHub\mnist_playground\mnist_dataset\t10k-images-idx3-ubyte\t10k-images-idx3-ubyte'
+# Check images
 
-# file = open(path)
 
-tr_images, tr_labels = mndata.load_training()
-te_images, te_labels = mndata.load_testing()
+plt.imshow(x_train[0], cmap='Greys')
+plt.show()
